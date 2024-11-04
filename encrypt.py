@@ -43,21 +43,27 @@ def encrypt(msg, alphabet, text):
     bin = ''
     encoded = ''
     msg = msg.upper()
+    text = text.upper()
     for letter in msg:
         if letter in alphabet.keys():
             bin += alphabet[letter]
 
-    for i, letter in enumerate(text):
+    i = 0
+    j = 0
+    while i < len(bin):
         new_letter = ''
-        if (i < len(bin)):
-            if bin[i] != '0' and letter != ' ':
-                new_letter += '\033[3m'
+        letter = text[j]
+        new_letter = letter
+        if letter in alphabet.keys():
+            if bin[i] == '1':
+                new_letter = '\033[3m'
                 new_letter += letter
                 new_letter += '\033[0m'
-            else:
-                new_letter = letter
-        else:
-            new_letter = letter
+
+            i += 1
+
+
+        j += 1
 
         encoded += new_letter
 
@@ -70,13 +76,10 @@ if(args.bin):
     file = open(args.output, 'w')
     file.write(bin + '\n')
     file.close()
-
-file = open(args.output, 'w')
-file.write( encoded + '\n')
-file.close()
-
-
+else:
+    file = open(args.output, 'w')
+    file.write( encoded + '\n')
+    file.close()
 
 print(text)
-print(alphabet)
-print(args)
+print(bin)
