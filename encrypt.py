@@ -80,6 +80,3 @@ else:
     file = open(args.output, 'w')
     file.write( encoded + '\n')
     file.close()
-
-print(text)
-print(bin)

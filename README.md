@@ -10,8 +10,3 @@ partir de um arquivo.
 
 Prezem pela elaboração de métodos (funcoes) bem definidas para a
 cifragem/decifragem, sem uso de variáveis globais.
-
-Haverá um próximo trabalho prático em que essas implementações serão usadas como
-componentes para propor novos algoritmos de criptografia que combinem três ou
-mais métodos clássicos de cifragem (especificação exata do novo trabalho ainda
-será divulgada).
